@@ -11,6 +11,7 @@ class CSWidget extends StatelessWidget {
   final CSWidgetStyle style;
   final bool addPaddingToBorder;
   final bool showTopBorder;
+  final bool showBottomBorder;
 
   const CSWidget(
     this.widget, {
@@ -19,6 +20,8 @@ class CSWidget extends StatelessWidget {
     this.style = CS_DEFAULT_STYLE,
     this.addPaddingToBorder = false,
     this.showTopBorder = false,
+    this.showBottomBorder = true,
+
   });
 
   @override
@@ -67,9 +70,9 @@ class CSWidget extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           border: Border(
-            bottom: BorderSide(
+            bottom: showBottomBorder ? BorderSide(
               color: CupertinoColors.opaqueSeparator.resolveFrom(context),
-            ),
+            ) : BorderSide.none,
           ),
         ),
         child: child,

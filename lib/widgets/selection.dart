@@ -68,6 +68,7 @@ class CSSelection<T> extends StatelessWidget {
       ),
       addPaddingToBorder: items.last != item,
       showTopBorder: item.showTopBorder,
+      showBottomBorder: item.showBottomBorder,
     );
   }
 }
@@ -76,10 +77,12 @@ class CSSelectionItem<T> {
   final T value;
   final String text;
   final bool showTopBorder;
+  final bool showBottomBorder;
 
   const CSSelectionItem({
     this.value,
     this.text,
     this.showTopBorder = false,
+    this.showBottomBorder = true,
   });
 }
